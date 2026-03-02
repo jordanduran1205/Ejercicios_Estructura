@@ -34,3 +34,4 @@ public class Ejercicio10 {
         sc.close();
     }
 }
+// X=1 Y=2 Z=3 x=3 Y=1 Z=2
