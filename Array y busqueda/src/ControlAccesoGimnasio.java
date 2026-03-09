@@ -11,13 +11,18 @@
 // Búsqueda Binaria. Es eficiente para buscar códigos numéricos
 // en una lista que ya está organizada.
 
+import java.util.Scanner;
+
 public class ControlAccesoGimnasio {
 
     public static void main(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
+
         int[] codigos = {1001, 1020, 1050, 1100, 1200, 1300, 1500, 1700};
 
-        int codigoIngresado = 1200;
+        System.out.print("Ingrese su código de acceso: ");
+        int codigoIngresado = sc.nextInt();
 
         int inicio = 0;
         int fin = codigos.length - 1;
@@ -41,6 +46,13 @@ public class ControlAccesoGimnasio {
 
         if (autorizado) {
             System.out.println("Acceso permitido. Bienvenido al gimnasio.");
+        } else {
+            System.out.println("Acceso denegado. Pago pendiente.");
+        }
+
+        sc.close();
+    }
+}
         } else {
             System.out.println("Acceso denegado. Pago pendiente.");
         }
