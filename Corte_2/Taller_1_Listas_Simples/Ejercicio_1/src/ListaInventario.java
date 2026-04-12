@@ -1,7 +1,7 @@
 public class ListaInventario {
     private Producto cabeza;
     private Producto cola;
-
+    
     public void insertarProducto(String nombre, int cantidad, int diasParaVencer) {
         Producto nuevo = new Producto(nombre, cantidad, diasParaVencer);
 
@@ -24,7 +24,7 @@ public class ListaInventario {
 
     public void mostrarInventario() {
         Producto actual = cabeza;
-        System.out.println("Inventario completo:");
+        System.out.println("\nInventario completo:");
         while (actual != null) {
             System.out.println("Producto: " + actual.nombre +
                                " | Cantidad: " + actual.cantidad +
@@ -32,6 +32,7 @@ public class ListaInventario {
             actual = actual.siguiente;
         }
     }
+
     public void mostrarProductosPorVencer() {
         Producto actual = cabeza;
         System.out.println("\nProductos con menos de 5 días para vencer:");

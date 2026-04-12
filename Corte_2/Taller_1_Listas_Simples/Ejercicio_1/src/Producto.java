@@ -2,7 +2,7 @@ public class Producto {
     String nombre;
     int cantidad;
     int diasParaVencer;
-    Producto siguiente; 
+    Producto siguiente;
 
     public Producto(String nombre, int cantidad, int diasParaVencer) {
         this.nombre = nombre;
