@@ -6,7 +6,7 @@ public class Galeria {
 
     public Galeria() {
         fotos = new ArrayList<>();
-        indiceActual = -1; // No hay foto seleccionada al inicio
+        indiceActual = -1; 
     }
 
     public void agregarFoto(Fotografia foto) {
