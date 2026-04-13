@@ -7,6 +7,7 @@ public class Reproductor {
         cabeza = null;
         cola = null;
         actual = null;
+        
     }
 
     public void agregarCancion(String titulo, String artista, int duracion) {

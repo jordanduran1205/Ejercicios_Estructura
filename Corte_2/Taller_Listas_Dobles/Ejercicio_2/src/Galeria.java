@@ -1,30 +1,35 @@
-import java.util.ArrayList;
-
 public class Galeria {
-    private ArrayList<Fotografia> fotos;
-    private int indiceActual;
+    private Fotografia cabeza;
+    private Fotografia cola;
+    private Fotografia actual;
 
     public Galeria() {
-        fotos = new ArrayList<>();
-        indiceActual = -1; 
+        cabeza = null;
+        cola = null;
+        actual = null;
     }
 
     public void agregarFoto(Fotografia foto) {
-        fotos.add(foto);
-        if (indiceActual == -1) indiceActual = 0;
+        if (cabeza == null) {
+            cabeza = cola = actual = foto;
+        } else {
+            cola.siguiente = foto;
+            foto.anterior = cola;
+            cola = foto;
+        }
     }
 
     public void mostrarFotoActual() {
-        if (indiceActual >= 0 && indiceActual < fotos.size()) {
-            System.out.println(fotos.get(indiceActual));
+        if (actual != null) {
+            System.out.println(actual);
         } else {
             System.out.println("No hay fotos en la galería.");
         }
     }
 
     public void siguienteFoto() {
-        if (indiceActual < fotos.size() - 1) {
-            indiceActual++;
+        if (actual != null && actual.siguiente != null) {
+            actual = actual.siguiente;
             mostrarFotoActual();
         } else {
             System.out.println("Ya estás en la última foto.");
@@ -32,8 +37,8 @@ public class Galeria {
     }
 
     public void anteriorFoto() {
-        if (indiceActual > 0) {
-            indiceActual--;
+        if (actual != null && actual.anterior != null) {
+            actual = actual.anterior;
             mostrarFotoActual();
         } else {
             System.out.println("Ya estás en la primera foto.");
@@ -42,13 +47,17 @@ public class Galeria {
 
     public void reproducirGaleria() {
         System.out.println("\n▶ Recorriendo hacia adelante:");
-        for (int i = 0; i < fotos.size(); i++) {
-            System.out.println(fotos.get(i));
+        Fotografia temp = cabeza;
+        while (temp != null) {
+            System.out.println(temp);
+            temp = temp.siguiente;
         }
 
         System.out.println("\n◀ Recorriendo hacia atrás:");
-        for (int i = fotos.size() - 1; i >= 0; i--) {
-            System.out.println(fotos.get(i));
+        temp = cola;
+        while (temp != null) {
+            System.out.println(temp);
+            temp = temp.anterior;
         }
     }
 }
