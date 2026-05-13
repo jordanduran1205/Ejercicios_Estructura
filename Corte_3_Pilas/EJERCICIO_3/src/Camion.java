@@ -1,0 +1,19 @@
+public class Camion {
+    String placa;
+    String conductor;
+    double cargaToneladas;
+    Camion siguiente; // enlace al siguiente nodo (pila)
+
+    public Camion(String placa, String conductor, double cargaToneladas) {
+        this.placa = placa;
+        this.conductor = conductor;
+        this.cargaToneladas = cargaToneladas;
+        this.siguiente = null;
+    }
+
+    @Override
+    public String toString() {
+        return "Placa: " + placa + " | Conductor: " + conductor + 
+               " | Carga: " + cargaToneladas + " toneladas";
+    }
+}
