@@ -1,9 +1,9 @@
+
 public class Estacion {
     String nombrePunto;
     int profundidad;
     double nivelOxigeno;
     Estacion siguiente; 
-
     public Estacion(String nombrePunto, int profundidad, double nivelOxigeno) {
         this.nombrePunto = nombrePunto;
         this.profundidad = profundidad;
@@ -13,7 +13,6 @@ public class Estacion {
 
     @Override
     public String toString() {
-        return "Estación: " + nombrePunto + " | Profundidad: " + profundidad + 
-         "m | Oxígeno: " + nivelOxigeno + "%";
+        return "Estación: " + nombrePunto + " | Profundidad: " + profundidad + "m | Oxígeno: " + nivelOxigeno + "%";
     }
 }
