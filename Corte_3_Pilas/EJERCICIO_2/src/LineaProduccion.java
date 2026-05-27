@@ -34,7 +34,7 @@ public class LineaProduccion {
         System.out.println("Descartando piezas buenas hasta encontrar la defectuosa...");
         while (cima != null) {
             if (cima.esDefectuosa) {
-                System.out.println("⚠️ Se encontró pieza defectuosa: " + cima.nombrePieza);
+                System.out.println(" Se encontró pieza defectuosa: " + cima.nombrePieza);
                 break;
             } else {
                 System.out.println("Pieza descartada: " + cima.nombrePieza);
